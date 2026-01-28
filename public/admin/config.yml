@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "services"
+    label: "Services"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "select", options: ["Monitor", "Smartphone", "Palette", "Search", "PenTool", "Layout", "Code", "Database", "Server"]}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Web Development", "Branding", "Social Media", "SEO"], default: "Web Development"}
+      - {label: "Icon", name: "icon", widget: "select", options: ["ShoppingBag", "Rocket", "Globe", "Monitor", "Smartphone"], default: "Monitor"}
+      - {label: "Order", name: "order", widget: "number", default: 0}
+
+  - name: "packages"
+    label: "Packages"
+    folder: "src/content/packages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Features", name: "features", widget: "list"}
+      - {label: "Highlighted", name: "highlighted", widget: "boolean", default: false}
+      - {label: "Button Text", name: "buttonText", widget: "string", default: "Choose Plan"}
+      - {label: "Order", name: "order", widget: "number", default: 0}

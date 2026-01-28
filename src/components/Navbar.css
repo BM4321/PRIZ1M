@@ -1,0 +1,168 @@
+.navbar {
+    background: rgba(0, 53, 84, 0.85);
+    /* Primary Dark Blue with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    /* Whiten the logo for dark background if needed */
+}
+
+/* If using LIGHT LOGO specifically designed for dark backgrounds */
+.navbar-logo img[src*="LIGHT"] {
+    filter: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.active {
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 10px var(--color-secondary);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Navbar specific button tweak to fit dark theme */
+.nav-btn.primary-btn {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.primary-btn:hover {
+    background: #f0f0f0;
+    color: var(--color-primary-dark);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 960px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        background: rgba(0, 53, 84, 0.95);
+        backdrop-filter: blur(15px);
+        padding-top: var(--spacing-xl);
+        gap: var(--spacing-lg);
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+        z-index: 1000;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        display: table;
+        font-size: 1.2rem;
+    }
+
+    .btn-item {
+        margin-top: var(--spacing-md);
+    }
+
+    .navbar-logo img {
+        height: 35px;
+    }
+}
+
+
+/* Hamburger Animation */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

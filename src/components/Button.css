@@ -1,0 +1,8 @@
+/* Button.css is mostly handled by global classes, but we can add specific tweaks here */
+button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
