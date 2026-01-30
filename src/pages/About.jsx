@@ -1,4 +1,4 @@
-import React from 'react';
+import TeamCarousel from '../components/TeamCarousel';
 
 const About = () => {
     return (
@@ -22,6 +22,13 @@ const About = () => {
                         We specialize in web development, social media management, and graphic design, serving clients across various industries.
                     </p>
                 </div>
+            </div>
+
+            {/* Team Section */}
+            <div className="team-section text-center" style={{ marginTop: '5rem' }}>
+                <h2 className="mb-md">Meet Our Team</h2>
+                <p className="mb-lg">The minds behind the magic.</p>
+                <TeamCarousel />
             </div>
         </div>
     );
