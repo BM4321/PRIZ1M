@@ -10,6 +10,8 @@ export async function loadContent(type) {
         files = import.meta.glob('../content/portfolio/*.md', { query: '?raw', import: 'default' });
     } else if (type === 'packages') {
         files = import.meta.glob('../content/packages/*.md', { query: '?raw', import: 'default' });
+    } else if (type === 'team') {
+        files = import.meta.glob('../content/team/*.md', { query: '?raw', import: 'default' });
     }
 
     const contentPromises = Object.values(files).map((loader) => loader());
