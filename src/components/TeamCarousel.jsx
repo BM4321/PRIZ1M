@@ -9,24 +9,33 @@ const TeamCarousel = () => {
     const teamMembers = [
         {
             id: 1,
-            name: "Alex Morgan",
-            role: "CEO & Founder",
+            name: "Godson Gideon",
+            role: "CEO & Co-Founder",
             image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            bio: "Visionary leader with 10+ years in digital transformation."
+            bio: "Visionary leader with 10+ years in digital transformation.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "mailto:godson@priz1m.com"
         },
         {
             id: 2,
-            name: "Sarah Chen",
-            role: "Creative Director",
+            name: "Ismart",
+            role: "CFO & Co-Founder",
             image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            bio: "Award-winning designer passionate about user-centric experiences."
+            bio: "Award-winning designer passionate about user-centric experiences.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "mailto:ismart@priz1m.com"
         },
         {
             id: 3,
-            name: "James Wilson",
-            role: "Lead Developer",
+            name: "Shedrack Maeda",
+            role: "CTO & Co-Founder",
             image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            bio: "Full-stack expert specializing in scalable web architectures."
+            bio: "Full-stack expert specializing in scalable web architectures.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "mailto:shedrack@priz1m.com"
         }
     ];
 
@@ -71,9 +80,15 @@ const TeamCarousel = () => {
                                 <h4 className="text-secondary">{teamMembers[current].role}</h4>
                                 <p>{teamMembers[current].bio}</p>
                                 <div className="team-socials">
-                                    <Linkedin size={20} className="social-icon" />
-                                    <Twitter size={20} className="social-icon" />
-                                    <Mail size={20} className="social-icon" />
+                                    <a href={teamMembers[current].linkedin} target="_blank" rel="noopener noreferrer">
+                                        <Linkedin size={20} className="social-icon" />
+                                    </a>
+                                    <a href={teamMembers[current].twitter} target="_blank" rel="noopener noreferrer">
+                                        <Twitter size={20} className="social-icon" />
+                                    </a>
+                                    <a href={teamMembers[current].email}>
+                                        <Mail size={20} className="social-icon" />
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
